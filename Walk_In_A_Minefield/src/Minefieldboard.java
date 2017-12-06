@@ -17,7 +17,9 @@ public class Minefieldboard {
 		}		
 	}
 	
-	 void Move(Point p1, Point p2);
+	 void Move(Point p1, Point p2) {
+		 
+	 }
 	
 	
 
