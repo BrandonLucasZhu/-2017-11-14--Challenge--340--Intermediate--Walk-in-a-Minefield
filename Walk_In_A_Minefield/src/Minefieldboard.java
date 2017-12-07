@@ -7,7 +7,7 @@ public class Minefieldboard {
 		
 		for (int i = 0; i < grid.length;i++) {
 			for (int j=0; j < grid[i].length;j++) {
-				if (i==0 || i==13 || j==0 || j==8) {
+				if (i==0 || i==grid.length || j==0 || j==grid[i].length) {
 					this.grid = new Point(i,j,"+");//Create border walls
 				}
 				else {
@@ -21,6 +21,11 @@ public class Minefieldboard {
 		 
 	 }
 	
-	
+	 protected boolean hit_boundary() {
+	    	if (p.getType.equals("+")) {
+	    		return false;
+	    	}
+	    	return true;
+	    }
 
 }

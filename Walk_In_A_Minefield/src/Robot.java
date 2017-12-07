@@ -18,12 +18,7 @@ public class Robot {
 		return start_robot;
 	}
 	
-	protected boolean isMoveValid() {
-    	if (p.getType.equals("+")) {
-    		return false;
-    	}
-    	return true;
-    }
+	
     
 	
 }

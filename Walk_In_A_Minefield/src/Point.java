@@ -21,7 +21,7 @@ public class Point {
 		 x=i; 
 	 }
 	 
-	 public	void setY(int j) {
+	 public void setY(int j) {
 		 y=j; 
 	 }
 	 
