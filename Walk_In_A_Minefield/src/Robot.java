@@ -1,20 +1,37 @@
 
 public class Robot {
 	
-	private int start_robot; //1 = On, 0 = Off
-	private int direction;  // N for up, S for down, E for east, W for west
+	private boolean start_robot; //True = on, False = Off
 	private Point p; 
 	private Minefieldboard b;
 	
-	//Create a initial robot
-	Robot(Point p, Minefieldboard b, int on_or_off, int d){
-		this.p = p;
-		this.b = b;
-		start_robot = on_or_off; 
-		direction = d;
+	public enum direction {
+		N, S, E, W;
+		
+		  int movement(int x, int y) {
+		        switch (this) {
+		            case N:
+		                return y+1;
+		            case S:
+		                return y-1;
+		            case E:
+		                return x+1;
+		            case W:
+		                return x-1;
+		            default:
+		                throw new AssertionError("Unknown operations " + this);
+		        }
+		    }
+		
+	}  // N for up, S for down, E for east, W for west
+	
+	//Create a robot
+	public Robot() {
+		this.p = new Point(0,7,"M");
+		start_robot = false; 
 	}
     
-	public getStatus() {
+	public boolean getStatus() {
 		return start_robot;
 	}
 	
