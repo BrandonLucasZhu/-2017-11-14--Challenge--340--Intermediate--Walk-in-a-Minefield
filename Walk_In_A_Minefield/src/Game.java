@@ -5,8 +5,8 @@ import java.util.*;
 
 public class Game {
 
-	private static Minefieldboard board;
-	private static Robot robo; 
+	private static Minefieldboard board = new Minefieldboard();
+	private static Robot robo = new Robot(); 
 	
 	public Game(){
 		board = new Minefieldboard();

@@ -1,42 +1,42 @@
 
 public class Minefieldboard {
 	
-	private Point[][] grid = new Point[13][8];
-	
+	private Point[][] grid = new Point[8][13];
+	private String disp_board;
 	public Minefieldboard() {
 		
 		for (int i = 0; i < grid.length;i++) {
 			for (int j=0; j < grid[i].length;j++) {
-				if (i==0 || i==grid.length || j==0 || j==grid[i].length) {
+				if (i==0 || i==grid.length-1 || j==0 || j==grid[i].length-1) {
 					this.grid[i][j] = new Point(i,j,"+");//Create border walls
-					
 				}
 				else {
 					this.grid[i][j] = new Point(i,j,"0");//regular movable tiles
 				}
-				System.out.println(grid[i][j].getType());
+				
 			}
 		}
 		this.grid[5][5] = new Point(5,5,"*"); //Some hardcoded mines for testing
-		this.grid[7][4] = new Point(7,4,"*");
+		this.grid[6][4] = new Point(6,4,"*");
 		this.grid[3][3] = new Point(3,3,"*");
 		
-		this.grid[13][2] = new Point(13,2,"0"); // The hardcoded exit of the map
+		this.grid[grid.length-1][2] = new Point(grid.length-1,2,"0"); // The hardcoded exit of the map
 		
 	}
 	
+	//public String toString() {
+     //   return this.name + "," + this.number;
+    //}
+	
 	public void displayBoard() {
+		
 		for (int row = 0; row < grid.length; row++){
-		      System.out.println("");
-		      System.out.println("---------------------------------");
-
 		      for (int column = 0; column < grid[row].length; column++){
-		          System.out.print("| " + " " + " ");
-		      }       
-		      System.out.print("|");
+		    	  disp_board += grid[row][column].getType();
+		      }
+		    disp_board += "\n"; 
 		}
-		    System.out.println("");
-		    System.out.println("---------------------------------");
+		System.out.println(disp_board);
 	}
 	
 	public Point get_point(int i, int j) {
