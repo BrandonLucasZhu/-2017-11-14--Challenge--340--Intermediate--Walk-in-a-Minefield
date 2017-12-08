@@ -35,17 +35,16 @@ public class Robot {
 		return p;
 	}
     
-	void SetLocation(Point p,int x, int y) {
+	
+	void SetLocation(int x, int y) {
 		p.setX(x);
 		p.setY(y);
+		p.setType("M");
 	}
 	
 	
 	public boolean getStatus() {
 		return start_robot;
 	}
-	
-	
-    
 	
 }

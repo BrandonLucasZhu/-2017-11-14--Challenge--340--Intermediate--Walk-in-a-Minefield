@@ -31,14 +31,14 @@ public class Minefieldboard {
     //}
 	
 	public void displayBoard() {
-		
+		disp_board = "";
 		for (int row = 0; row < grid.length; row++){
 		      for (int column = 0; column < grid[row].length; column++){
 		    	  disp_board += grid[row][column].getType();
 		      }
 		    disp_board += "\n"; 
 		}
-		System.out.println(disp_board);
+	System.out.print(disp_board);
 	}
 	
 	public Point get_point(int i, int j) {
@@ -47,13 +47,14 @@ public class Minefieldboard {
 		
 	 void Move(Point p1, Point p2) {
 		 p2=p1;
+		 grid[p2.getX()][p2.getY()] = p2;
 	 }
 	
 	 protected boolean hit_boundary(Point p) {
-	    	if (p.getType().equals("+")) {
-	    		return false;
-	    	}
-	    	return true;
+	    if (p.getType().equals("+")) {
+	    	return false;
 	    }
+	    return true;
+	 }
 
 }

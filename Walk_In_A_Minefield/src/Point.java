@@ -25,6 +25,10 @@ public class Point {
 		 y=j; 
 	 }
 	 
+	 public void setType(String newTile) {
+		 tile = newTile; //Returns the type of tile
+	 }
+	 
 	 public String getType() {
 		 return tile; //Returns the type of tile
 	 }
