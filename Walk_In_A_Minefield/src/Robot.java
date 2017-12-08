@@ -27,10 +27,20 @@ public class Robot {
 	
 	//Create a robot
 	public Robot() {
-		this.p = new Point(0,7,"M");
+		this.p = new Point(6,0,"M");
 		start_robot = false; 
 	}
+	
+	public Point GetLocation() {
+		return p;
+	}
     
+	void SetLocation(Point p,int x, int y) {
+		p.setX(x);
+		p.setY(y);
+	}
+	
+	
 	public boolean getStatus() {
 		return start_robot;
 	}

@@ -2,7 +2,9 @@
 public class Minefieldboard {
 	
 	private Point[][] grid = new Point[8][13];
-	private String disp_board;
+	private String disp_board = "";
+	private Robot robo_coord = new Robot(); //Keep track of the location of the robot
+	
 	public Minefieldboard() {
 		
 		for (int i = 0; i < grid.length;i++) {
@@ -20,8 +22,8 @@ public class Minefieldboard {
 		this.grid[6][4] = new Point(6,4,"*");
 		this.grid[3][3] = new Point(3,3,"*");
 		
-		this.grid[grid.length-1][2] = new Point(grid.length-1,2,"0"); // The hardcoded exit of the map
-		
+		this.grid[1][12] = new Point(1,12,"0"); // The hardcoded exit of the map
+		this.grid[6][0] = new Point(6,0,"M");
 	}
 	
 	//public String toString() {

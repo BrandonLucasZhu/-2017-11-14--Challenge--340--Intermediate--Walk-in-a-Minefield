@@ -14,11 +14,14 @@ public class Game {
 	}
 	
 	public static void main(String[] args){
-		//System.out.println("Please enter the coordinates for the robot");
-		//Scanner read_command = new Scanner(System.in);
-		//String input_command = read_command.nextLine();
-		//System.out.println(board.getType());
 		board.displayBoard();
+		System.out.println("Please enter the coordinates for the robot");
+		Scanner read_command = new Scanner(System.in);
+		String input_command = read_command.nextLine();
+		char[] split_input = input_command.toCharArray();//read each individual command
+		for (char per_command : split_input) {
+		    
+		}
 		
 	}
 	
