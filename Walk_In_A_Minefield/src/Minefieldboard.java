@@ -30,13 +30,12 @@ public class Minefieldboard {
      //   return this.name + "," + this.number;
     //}
 	
-	//X axis is in the south direction
-	//Y axis is in the East direction
+	//Transpose Array display to get proper coordinate positive x and y axis
 	public void displayBoard() {
 		disp_board = "";
-		for (int row = 0; row < grid.length; row++){
-		      for (int column = 0; column < grid[row].length; column++){
-		    	  System.out.print(grid[row][column].getType() + " ");
+		for (int i = grid[0].length-1; i >= 0; i--){
+		      for (int j = grid.length-1; j >= 0; j--){
+		    	  System.out.print(grid[j][i].getType() + " ");
 		    	  
 		      }
 		      System.out.println();
