@@ -27,22 +27,22 @@ public class Game {
 				System.out.println("Please turn on the robot.");
 				System.exit(0); 
 			}
-			if (split_input[i] == 'N') {
+			if (split_input[i] == 'E') {
 				int last_locx = robo.GetLocation().getX();
 				int last_locy = robo.GetLocation().getY();
-				//System.out.println(Robot.direction.N.movement(robo.GetLocation().getX(),robo.GetLocation().getY()));
-				robo.SetLocation(Robot.direction.N.movement(robo.GetLocation().getX(),robo.GetLocation().getY()), robo.GetLocation().getY());
+				System.out.println(Robot.direction.E.movement(robo.GetLocation().getX(),robo.GetLocation().getY()));
+				robo.SetLocation(Robot.direction.E.movement(robo.GetLocation().getX(),robo.GetLocation().getY()), robo.GetLocation().getY());
 				board.Move(board.get_point(last_locx, last_locy),robo.GetLocation());
 			}
-			else if (split_input[i] == 'S') {
-				robo.SetLocation(Robot.direction.S.movement(robo.GetLocation().getX(),robo.GetLocation().getY()), robo.GetLocation().getY());
+			else if (split_input[i] == 'W') {
+				robo.SetLocation(Robot.direction.W.movement(robo.GetLocation().getX(),robo.GetLocation().getY()), robo.GetLocation().getY());
 			
 			}
-			else if (split_input[i] == 'E') {
-				robo.SetLocation(robo.GetLocation().getX(),Robot.direction.E.movement(robo.GetLocation().getX(),robo.GetLocation().getY()));
+			else if (split_input[i] == 'N') {
+				robo.SetLocation(robo.GetLocation().getX(),Robot.direction.N.movement(robo.GetLocation().getX(),robo.GetLocation().getY()));
 			}
-			else if (split_input[i] == 'W') {
-				robo.SetLocation(robo.GetLocation().getX(),Robot.direction.W.movement(robo.GetLocation().getX(),robo.GetLocation().getY()));
+			else if (split_input[i] == 'S') {
+				robo.SetLocation(robo.GetLocation().getX(),Robot.direction.S.movement(robo.GetLocation().getX(),robo.GetLocation().getY()));
 			}
 			/*else {
 				System.out.println("Invalid coord.");
