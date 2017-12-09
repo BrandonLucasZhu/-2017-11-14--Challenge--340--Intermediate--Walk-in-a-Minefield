@@ -10,14 +10,14 @@ public class Robot {
 		
 		  int movement(int x, int y) {
 		        switch (this) {
-		            case N:
+		            case N://Direction calculation flipped cause printed board is flipped
 		                return y+1;
 		            case S:
 		                return y-1;
 		            case E:
-		                return x+1;
-		            case W:
 		                return x-1;
+		            case W:
+		                return x+1;
 		            default:
 		                throw new AssertionError("Unknown operations " + this);
 		        }
@@ -39,7 +39,6 @@ public class Robot {
 	void SetLocation(int x, int y) {
 		p.setX(x);
 		p.setY(y);
-		p.setType("M");
 	}
 	
 	

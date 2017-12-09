@@ -47,17 +47,23 @@ public class Minefieldboard {
 		return grid[i][j]; 
 	}
 		
-	 void Move(Point p1, Point p2) {
-	
-		 grid[p2.getX()][p2.getY()] = p2;
-		 
-	 }
-	
-	 protected boolean hit_boundary(Point p) {
-	    if (p.getType().equals("+")) {
-	    	return false;
+	public void Move(Point p1,Point p2) {
+		grid[p2.getX()][p2.getY()] = p2; //update coordinates
+		//grid[p2.getX()][p2.getY()] = p2.setType("M"); //update board with robot move completed
+	}
+	 
+	public void isMine(Point p) {
+		if (grid[p.getX()][p.getY()].getType().equals("*")) {
+	    	System.out.println("Game over, the robot touched a mine");
+	    	System.exit(0);
 	    }
-	    return true;
-	 }
+	}
+	
+	public void hit_boundary(Point p) {
+	    if (grid[p.getX()][p.getY()].getType().equals("+")) {
+	    	System.out.println("Game over, the robot crashed into a wall");
+	    	System.exit(0);
+	    }
+	}
 
 }
